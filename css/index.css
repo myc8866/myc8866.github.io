@@ -3339,12 +3339,12 @@ h1.page-title + .tag-cloud-list {
   content: '';
 }
 #page-header.full_page {
-  height: 100px;
+  height: 80px;
   background-attachment: fixed;
 }
 #page-header.full_page #site-info {
   position: absolute;
-  top: 30px;
+  top: 5px;
   padding: 0 10px;
   width: 100%;
 }
