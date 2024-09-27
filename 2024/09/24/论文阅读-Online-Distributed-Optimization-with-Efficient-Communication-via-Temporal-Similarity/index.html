@@ -159,12 +159,12 @@
 <p>每个时间的最优解（全局信息）为：<br>$$<br>\mathbf{x}_t^{\text{ctr}}\in\arg\min{f_t(\mathbf{x})|g_t^n(\mathbf{x})\leq0,\forall n}.<br>$$<br>论文的目标是开发一种有约束的在线分布式优化算法，以计算具有亚线性性能差距到$\mathbf{x}_t^{\text{ctr}}$的P1的在线分布式解序列，即以及亚线性约束违反。性能差距和约束违反的次线性性是重要的;这意味着在线分布式解在时间平均性能方面接近于$\mathbf{x}_t^{\text{ctr}}$，并且长期约束是渐近满足的。</p>
 <h4 id="Lyapunov优化与具体算法"><a href="#Lyapunov优化与具体算法" class="headerlink" title="Lyapunov优化与具体算法"></a>Lyapunov优化与具体算法</h4><p>在每个设备中引入虚拟队列（p1）：<br>$$<br>Q_{t+1}^n&#x3D;\begin{bmatrix}(1-\gamma^2)Q_t^n+\gamma\eta g_t^n(\mathbf{x}<em>t^n)\end{bmatrix}</em>+<br>$$<br>其中γ∈(0,1)是虚拟队列上的调优因子，η &gt; 0是约束函数上的加权因子，[a]+ &#x3D; max{a, 0}是投影算子Qn t的作用类似于P1的拉格朗日乘法器或违反约束的积压队列。这个新的可调虚拟队列提供了Qn t的一个简单上界，它不需要通常假定的基于虚拟队列在线的Slater条件优化算法。为了克服不能再直接将虚拟队列上界转移到约束违反界技术困难，论文将使用一种新的改进的Lyapunov漂移分析技术来约束违反项。</p>
 <p>将p1转化为局部优化：<br>$$<br>\mathbf{P2}^n: \min_{\mathbf{x}\in\mathcal{X}} \langle\nabla f_t^n(\hat{\mathbf{x}}_t),\mathbf{x}-\hat{\mathbf{x}}_t\rangle+\alpha|\mathbf{x}-\hat{\mathbf{x}}_t|^2+\eta Q_t^ng_t^n(\mathbf{x})<br>$$<br>与最初的P1相比，长期决策不相似约束被转化为控制$g_t^n(\mathbf{x}_t^n)$以维持队列稳定性。求解凸优化问题P2n的直观方法是最小化修正漂移+惩罚+违反项的上界，以权衡损失最小化和随时间的约束违反。对p2n求梯度&#x3D;0并且投影到x上，就得到了最优解。ODOTS的局部决策更新是计算和通信感知的，即随着时间的推移，自动平衡优化的改进和通信的成本。</p>
-<p><img src="/1.jpg" alt="image-20240927195041425"></p>
-<p><img src="/2.jpg" alt="image-20240927195057664"></p>
+<p><img src="D:\app\boke\blog\source_posts\论文阅读-Online-Distributed-Optimization-with-Efficient-Communication-via-Temporal-Similarity\1.jpg" alt="image-20240927195041425"></p>
+<p><img src="D:\app\boke\blog\source_posts\论文阅读-Online-Distributed-Optimization-with-Efficient-Communication-via-Temporal-Similarity\2.jpg" alt="image-20240927195057664"></p>
 <h4 id="性能bound"><a href="#性能bound" class="headerlink" title="性能bound"></a>性能bound</h4><p>本节为证明ODOTS在优化目标和时间决策不相似约束中都提供了强有力的性能保证（证明略）。特别是，ODOTS的独特设计需要新的分析技术来考虑噪声决策更新和可调虚拟队列的影响。</p>
 <p>论文给每个器件n定义了一个修正的李雅普诺夫漂移<br>$$<br>\Theta_t^n&#x3D;\frac{1}{2\gamma}(Q_{t+1}^n-U)^2-\frac{1}{2\gamma}(Q_t^n-U)^2.<br>$$</p>
 <p>ODOTS与$\mathbf{x}<em>t^{\text{ctr}}$的性能差距的上限为<br>$$<br>\begin{aligned}\sum</em>{t&#x3D;1}^{T}(f_{t}(\hat{\mathbf{x}}<em>{t})-f</em>{t}(\mathbf{x}<em>{t}^{\mathrm{ctr}}))&amp;\leq\frac{D^{2}T}{4\alpha}+2\gamma\eta^{2}G^{2}T+\frac{\eta^{2}G^{2}\Omega</em>{T}}{2\gamma^{3}}\&amp;+\alpha\big(R^{2}+\Lambda_{2,T}+2R(\Lambda_{T}+\Pi_{T})\big)\end{aligned}<br>$$<br>ODOTS产生的约束违反的上界为<br>$$<br>\begin{aligned}&amp;\frac{1}{N}\sum_{t&#x3D;1}^{T}\sum_{n&#x3D;1}^{N}g_{t}^{n}(\mathbf{x}<em>{t}^{n})\leq\left(\frac{2\gamma^{2}T+2}{\gamma\eta^{2}}\right)^{\frac{1}{2}}\left(\frac{D^{2}T}{4\alpha}+2\gamma\eta^{2}G^{2}T\right.\&amp;+D(R+\delta)T+\alpha\big(R^{2}(1+\Xi</em>{T})+\Lambda_{2,T}+2R(\Lambda_{T}+\Pi_{T})\big)\bigg)^{\frac{1}{2}}\end{aligned}<br>$$<br>最终的结论：</p>
-<p><img src="/3.jpg" alt="image-20240927195921841"></p>
+<p><img src="D:\app\boke\blog\source_posts\论文阅读-Online-Distributed-Optimization-with-Efficient-Communication-via-Temporal-Similarity\3.jpg" alt="image-20240927195921841"></p>
 <p>此处论文没有证明。但将参数带入即可得到论文的结果。</p>
 <p>特别是，如果μ &lt; 1且ν &lt; 1，即系统变化在T上是次线性的，则性能差距和约束违反在T上都是次线性的。在动态不可预测的在线优化中，系统的次线性变化是实现次线性性能界限的标准必要条件(但通常是不足条件)。</p>
 <h3 id="实验与结果"><a href="#实验与结果" class="headerlink" title="实验与结果"></a>实验与结果</h3><p>论文在联邦学习中进行了实验。考虑一个具有N &#x3D; 10个设备和一个服务器的FL系统。基于真实世界的图像分类数据集，用于凸和非凸损失函数，在流行的MNIST数据集上评估了。使用多项逻辑回归的交叉熵损失。</p>
@@ -176,8 +176,8 @@
 <p>条件熵编码B(T) </p>
 <p>时间平均决策不相似度g (T)</p>
 <p>结果：</p>
-<p><img src="/4.jpg" alt="image-20240927200508027"></p>
-<p><img src="/5.jpg" alt="image-20240927200534124"></p>
+<p><img src="D:\app\boke\blog\source_posts\论文阅读-Online-Distributed-Optimization-with-Efficient-Communication-via-Temporal-Similarity\4.jpg" alt="image-20240927200508027"></p>
+<p><img src="D:\app\boke\blog\source_posts\论文阅读-Online-Distributed-Optimization-with-Efficient-Communication-via-Temporal-Similarity\5.jpg" alt="image-20240927200534124"></p>
 <h3 id="个人想法"><a href="#个人想法" class="headerlink" title="个人想法"></a>个人想法</h3><p>这是一篇应用李雅普诺夫漂移优化的论文，让我对李雅普诺夫漂移优化有了一点新的认识。论文针对在线分布式优化，共同考虑计算和通信随时间的变化，对于每个时间槽t，构造一个虚拟队列，实现了一个高效的联邦学习。对于论文的证明过程，作者给出比较详细的论证过程，整体上比较清晰。在实验部分中，对其他模型的对比也比较明显。</p>
 <h3 id="引用内容（自用）："><a href="#引用内容（自用）：" class="headerlink" title="引用内容（自用）："></a>引用内容（自用）：</h3><p>ieeexplore：</p>
 <p>@INPROCEEDINGS{10229086,<br>  author&#x3D;{Wang, Juncheng and Liang, Ben and Dong, Min and Boudreau, Gary and Afana, Ali},<br>  booktitle&#x3D;{IEEE INFOCOM 2023 - IEEE Conference on Computer Communications},<br>  title&#x3D;{Online Distributed Optimization with Efficient Communication via Temporal Similarity},<br>  year&#x3D;{2023},<br>  volume&#x3D;{},<br>  number&#x3D;{},<br>  pages&#x3D;{1-10},<br>  keywords&#x3D;{Performance evaluation;Costs;Federated learning;Computational efficiency;Servers;Noise measurement;Optimization},<br>  doi&#x3D;{10.1109&#x2F;INFOCOM53939.2023.10229086}}</p>
