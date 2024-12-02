@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Asteroid_Resource_Efficient_Hybrid_Pipeline_Parallelism_for_Collaborative DNN_Training_on_Heterogeneous_Edge_Devices | 太想进步了</title><meta name="author" content="myc"><meta name="copyright" content="myc"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Asteroid_Resource_Efficient_Hybrid_Pipeline_Parallelism_for_Collaborative DNN_Training_on_Heterogeneous_Edge_Devices题目：小行星：异构边缘设备上协同DNN训练的资源高效混合管道并行 出处：ACM MobiCom 时间：2024.11 作者：Shengyuan Ye等 代码：Aster">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Asteroid_Resource_Efficient_Hybrid_Pipeline_Parallelism_for_Collaborative DNN_Training_on_Heterogeneous_Edge_Devices">
+<meta property="og:url" content="http://example.com/2024/12/02/Asteroid-Resource-Efficient-Hybrid-Pipeline-Parallelism-for-Collaborative-DNN-Training-on-Heterogeneous-Edge-Devices/index.html">
+<meta property="og:site_name" content="太想进步了">
+<meta property="og:description" content="Asteroid_Resource_Efficient_Hybrid_Pipeline_Parallelism_for_Collaborative DNN_Training_on_Heterogeneous_Edge_Devices题目：小行星：异构边缘设备上协同DNN训练的资源高效混合管道并行 出处：ACM MobiCom 时间：2024.11 作者：Shengyuan Ye等 代码：Aster">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/1.jpg">
+<meta property="article:published_time" content="2024-12-02T07:37:43.000Z">
+<meta property="article:modified_time" content="2024-12-02T09:28:50.307Z">
+<meta property="article:author" content="myc">
+<meta property="article:tag" content="论文阅读">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/1.jpg"><link rel="shortcut icon" href="/img/1.png"><link rel="canonical" href="http://example.com/2024/12/02/Asteroid-Resource-Efficient-Hybrid-Pipeline-Parallelism-for-Collaborative-DNN-Training-on-Heterogeneous-Edge-Devices/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Asteroid_Resource_Efficient_Hybrid_Pipeline_Parallelism_for_Collaborative DNN_Training_on_Heterogeneous_Edge_Devices',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-12-02 17:28:50'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="太想进步了"></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Asteroid_Resource_Efficient_Hybrid_Pipeline_Parallelism_for_Collaborative DNN_Training_on_Heterogeneous_Edge_Devices</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-12-02T07:37:43.000Z" title="发表于 2024-12-02 15:37:43">2024-12-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-12-02T09:28:50.307Z" title="更新于 2024-12-02 17:28:50">2024-12-02</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Asteroid_Resource_Efficient_Hybrid_Pipeline_Parallelism_for_Collaborative DNN_Training_on_Heterogeneous_Edge_Devices"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Asteroid-Resource-Efficient-Hybrid-Pipeline-Parallelism-for-Collaborative-DNN-Training-on-Heterogeneous-Edge-Devices"><a href="#Asteroid-Resource-Efficient-Hybrid-Pipeline-Parallelism-for-Collaborative-DNN-Training-on-Heterogeneous-Edge-Devices" class="headerlink" title="Asteroid_Resource_Efficient_Hybrid_Pipeline_Parallelism_for_Collaborative DNN_Training_on_Heterogeneous_Edge_Devices"></a>Asteroid_Resource_Efficient_Hybrid_Pipeline_Parallelism_for_Collaborative DNN_Training_on_Heterogeneous_Edge_Devices</h2><p>题目：小行星：异构边缘设备上协同DNN训练的资源高效混合管道并行</p>
+<p>出处：ACM MobiCom</p>
+<p>时间：2024.11</p>
+<p>作者：Shengyuan Ye等</p>
+<p>代码：<a target="_blank" rel="noopener" href="https://paperswithcode.com/paper/asteroid-resource-efficient-hybrid-pipeline">Asteroid: Resource-Efficient Hybrid Pipeline Parallelism for Collaborative DNN Training on Heterogeneous Edge Devices | Papers With Code</a></p>
+<h3 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a>摘要：</h3><p>设备上深度神经网络（DNN）训练已被认为是边缘保护隐私的机器学习的关键。然而，<strong>密集的训练工作量</strong>和<strong>有限的机载计算资源</strong>对模型训练的可用性和效率提出了重大挑战。虽然现有的工作通过本地资源管理优化来解决这些挑战，但我们利用我们的观察，即边缘环境通常包含一组丰富的随附可信边缘设备，这些设备具有超出单个终端的空闲资源。我们提出了一个<strong>分布式边缘训练系统Asteroid</strong>，它<strong>打破了异构边缘设备之间的资源墙</strong>，从而实现了高效的模型训练加速。Asteroid采用<strong>混合管道并行</strong>来编排分布式训练，并在一定<strong>资源约束</strong>下进行明智的<strong>并行规划</strong>以<strong>最大化吞吐量</strong>。此外，开发了一种<strong>容错且轻量级的管道重放机制</strong>来驯服设备级动态，以训练鲁棒性和性能稳定性。我们使用视觉和语言模型在异构边缘设备上实现了Asteroid，通过评估表明，其训练速度<strong>比传统并行方法快12.2倍</strong>，<strong>比最先进的混合并行方法快2.1倍</strong>。此外，小行星可以恢复训练管道比基线方法快14倍，同时保持相当的吞吐量，尽管意外的设备退出和故障。</p>
+<h3 id="结论："><a href="#结论：" class="headerlink" title="结论："></a>结论：</h3><p>本文提出小行星用于跨异构和资源受限边缘设备的协同DNN训练。</p>
+<p>小行星解决了边缘环境中面临的多种挑战，比传统方法的训练速度快12.2倍，比最先进的HPP方法快2.1倍。</p>
+<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><h3 id="研究背景"><a href="#研究背景" class="headerlink" title="研究背景"></a>研究背景</h3><h5 id="DNN训练有什么问题？"><a href="#DNN训练有什么问题？" class="headerlink" title="DNN训练有什么问题？"></a><strong>DNN训练有什么问题？</strong></h5><p>对于DNN训练，有效的原位学习仍然存在<strong>训练时间过长</strong>、<strong>收敛稳定性差</strong>的问题。为了缓解这些（训练时间长、<strong>内存不足</strong>）问题，现有许多研究采用<strong>模型压缩</strong>技术（如剪枝、稀疏化和量化）或手工设计轻量级模型架构来降低DNN训练的计算复杂度，虽然减少了计算，但它们<strong>损害了模型的准确性</strong>。其他领先的研究工作已经探索了在<strong>本地资源上设计复杂的管理机制</strong>（例如，张量再物化，内存预算适应），但仍然<strong>受到物理资源短缺</strong>的内在缺陷的瓶颈。</p>
+<h5 id="为什么研究分布式边缘环境？"><a href="#为什么研究分布式边缘环境？" class="headerlink" title="为什么研究分布式边缘环境？"></a><strong>为什么研究分布式边缘环境？</strong></h5><p>1、<strong>可以利用边缘环境分布式训练</strong>。智能家居等流行的边缘场景通常包括一组可信任的闲置设备，而不是单个终端。这些辅助设备通常在物理上接近运行设备上学习任务的主要设备，并且可以作为原位DNN训练加速的资源增强。可用设备视为一个<strong>资源池</strong>，并以<strong>分布式的方式与它们协作</strong>，以在边缘呈现<strong>加速的模型训练</strong>。</p>
+<p>2、与云环境相比，<strong>直接利用边缘环境存在问题</strong>：(1)在计算能力、内存容量和通信带宽方面非常有限。(2)异构性要高得多，这就需要一种异构感知策略来最大限度地利用计算潜力。(3)由于设备的移动性和可访问性，表现出更多的潜在动态属性。。。不幸的是，没有现有的工作可以解决上述所有的挑战。</p>
+<h5 id="可以利用的DNN分布式训练方法有哪些？"><a href="#可以利用的DNN分布式训练方法有哪些？" class="headerlink" title="可以利用的DNN分布式训练方法有哪些？"></a><strong>可以利用的DNN分布式训练方法有哪些？</strong></h5><p><strong>数据并行</strong>。最常用的并行训练方法是数据并行（data parallelism， DP），输入在各个worker之间进行分区，每个worker维护整个模型的副本，并在与其他worker（即AllReduce）周期性同步梯度的同时对其本地数据执行训练。其工作负载的<strong>简单性</strong>为多个设备提供了更好的可伸缩性。然而，由于边缘连接松散且多变，<strong>同步带来的通信开销通常会占据训练时间</strong>。</p>
+<p><strong>管道并行</strong>。另一个广泛使用的并行是管道并行（pipeline parallelism， PP）。在PP中，DNN模型被划分为<strong>多个阶段</strong>，每个阶段被映射到一个单独的处理器上，以便逐级向前/向后传递执行，从而优化并行效率。然而，流水线并行也有缺点：(1)<strong>可扩展性弱</strong>。边缘集群的直接实现PP可能会创建太多的阶段，这会放大阶段间通信延迟的影响。(2)<strong>不可重叠的阶段间通信</strong>。当通信发生在具有大量中间激活的层之间时，PP无法有效地重叠前向和后向执行的层间通信。</p>
+<p><strong>分布式架构HPP</strong>。融合DP和PP优点的混合并行架构，采用HPP来促进与边缘设备的协作。除了打破单个设备的资源墙之外，采用HPP还提供以下好处：(1)每个设备仅存储整个模型的一个子集，从而导致<strong>更小的内存占用</strong>，这对于具有巨大参数的模型尤其有利。(2) HPP提供了高度灵活的并行架构，通过防止参数密集层中的AllReduce，可以有效地<strong>减少通信量</strong>。(3)通过分层规划，HPP可以避免中间张量较大的层间通信。通过计算和通信的完全重叠，HPP<strong>掩盖了边缘环境下网络容量的限制</strong>。(4)在考虑复杂异构边缘环境时，HPP提供了更高的调度灵活性，扩展了<strong>更大的并行规划优化空间</strong>。</p>
+<h5 id="研究挑战"><a href="#研究挑战" class="headerlink" title="研究挑战"></a>研究挑战</h5><p>稀缺的内存和网络容量；计算资源异构；资源动态问题。</p>
+<h3 id="研究目的"><a href="#研究目的" class="headerlink" title="研究目的"></a>研究目的</h3><p>针对DNN的分布式训练过程，打破异构边缘设备的资源墙，实现高效的模型训练加速。</p>
+<h4 id="论文贡献"><a href="#论文贡献" class="headerlink" title="论文贡献"></a>论文贡献</h4><p>提出了Asteroid，这是一个通用的分布式训练系统，能够协调多个异构边缘设备，以实现<strong>快速，资源高效和容错的模型训练</strong>。小行星的贡献不仅仅是利用分布式边缘设备进行训练加速，而是在三个层面上解决上述挑战。</p>
+<p>首先，从<strong>并行性</strong>的角度，采用混合管道并行性（HPP）作为一种原理来管理分布式训练工作流，结合数据并行和管道并行的优点，为异构边缘环境下的并行规划提供更大的优化空间。</p>
+<p>其次，为了最大限度地提高异构<strong>边缘设备间HPP的资源利用率</strong>，设计了一种基于动态规划的并行规划算法，并针对内存预算、有限通信容量和资源异构性等多维资源优化问题，设计了一种内存高效的批量摄取策略。</p>
+<p>最后，为了在运行时适应动态参与者，通过轻量级粗粒度工作负载迁移和拓扑驱动的模型复制应用了<strong>容错机制</strong>。</p>
+<h3 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h3><p>设备上DNN训练。</p>
+<p>深度神经网络的协同边缘计算。</p>
+<p>数据中心中的并行DNN训练。</p>
+<h3 id="论文方法"><a href="#论文方法" class="headerlink" title="论文方法"></a>论文方法</h3><p><strong><img src="/2024/12/02/Asteroid-Resource-Efficient-Hybrid-Pipeline-Parallelism-for-Collaborative-DNN-Training-on-Heterogeneous-Edge-Devices/1.png" class="" title="总体模型"></strong></p>
+<p>小行星的概述，其中包括三个主要阶段：预处理阶段，规划阶段和执行阶段。预处理阶段是在部署前运行一次的脱机过程。小行星分析器使用校准数据作为物理边缘设备的输入来执行训练过程，以记录并行规划（步骤1）所需的运行时配置文件。在规划阶段，Asteroid Planner将分析结果作为输入来生成规划配置，包括DNN模型分区点、设备分组策略和组内微批分配（步骤2）。这些配置全面解决了包括内存预算、有限的通信容量和资源异质性在内的挑战，并随后应用于目标DNN模型和训练参与者。在执行阶段，部署在每个参与者上的小行星工作者将负责模型执行，中间输出交换和梯度同步（步骤3）。为了应对运行时动态的挑战，需要容错管道重播机制将被应用（步骤4）。需要一个中央协调器（用户指定的设备）来应用规划配置和检测设备故障。</p>
+<h4 id="混合管道并行"><a href="#混合管道并行" class="headerlink" title="混合管道并行"></a>混合管道并行</h4><p>首先将DNN模型划分为多个阶段，每个阶段包含一个由一组连续网络层组成的阶段模型。资源池中的边缘设备将被划分为相应数量的设备组，每个设备组包含一个或多个设备。HPP将这些组之间的管道并行性与组内的数据并行性结合起来。</p>
+<p><strong><img src="/2024/12/02/Asteroid-Resource-Efficient-Hybrid-Pipeline-Parallelism-for-Collaborative-DNN-Training-on-Heterogeneous-Edge-Devices/2.png" class="" title="分阶段"></strong></p>
+<p>在训练过程中，一个小批将被分割成𝑀更小的微批，并同时注入管道中以增加并行性。如果设备组包含多个设备，则微批将进一步分解。每个设备对它负责的阶段模型执行<strong>前向传递（FP）和后向传递（BP）</strong>，并为每个小批中的所有微批累积梯度。在minibatch结束时，使用AllReduce同步每个设备组中的梯度，然后应用于阶段模型参数。整个小批量训练过程被称为HPP-Round。</p>
+<p><strong><img src="/2024/12/02/Asteroid-Resource-Efficient-Hybrid-Pipeline-Parallelism-for-Collaborative-DNN-Training-on-Heterogeneous-Edge-Devices/3.png" class="" title="不同的分批K"></strong></p>
+<p>对于DNN的训练内存，可以分为三类：(1)模型权重记忆（包括模型参数和累积梯度），(2)优化器记忆和(3)激活记忆（FP的中间输出）。HPP架构使每个设备只在内存中存储相应的阶段模型。实验表明，中间激活是内存占用的主要贡献者。受梯度积累思想的启发，我们采用了一种细粒度的微批调度，它以一前一后（1F1B）的方式工作，尽早调度BP以释放由FP产生的激活内存以供重用。设置较小的𝐾𝑝可以减少内存占用，但会损害阶段级管道并发性。</p>
+<p>所需要的内存峰值为：</p>
+<script type="math/tex; mode=display">
+\operatorname{Mem}_{p}(\beta)=\operatorname{Mem}_{p}^{(\mathrm{MOD})}+\operatorname{Mem}_{p}^{(\mathrm{OPT})}+K_{p} \times \operatorname{Mem}_{p}^{(\mathrm{ACT})}(\beta)</script><h4 id="并行计划"><a href="#并行计划" class="headerlink" title="并行计划"></a>并行计划</h4><p>将模型划分为多个连续阶段，对图节点进行拓扑排序，将DNN模型转换为层序列。实验表明，较小的批处理规模并不能充分利用gpu的并行能力，导致它们之间的非线性相关。因此，Asteroid profiler测量各种批量大小的实际边缘硬件上每层的执行时间。考虑时延tf与tb与设备带宽b。</p>
+<p>HPP-Round中每个步骤的训练过程分为三个阶段：等待阶段、执行阶段和AllReduce阶段，对应的时间分别表示为𝑇𝑠𝑤、𝑇𝑠𝑒和𝑇𝑠𝑎。核心的优化目标是最小化HPP-Round延迟，这是由三个阶段中总延迟最大的步骤决定的：</p>
+<script type="math/tex; mode=display">
+\text{HPP-Round Latency}=\max_{s\in\{0,1,...,S-1\}}\left(T_w^s+T_e^s+T_a^s\right)</script><p>s阶段的等待时间为前s-1个通信时间之和，AllReduce过程时间为s阶段的设备组中的通信容量除以通信带宽。对于执行时间，寻找一个步骤使得FP和BP在其执行阶段紧密注入的优势步骤（气泡数量最少），可以很好地近似为𝑀微批FP和BP的累积时间。根据梯形的形状，计算不同步骤s中的时间（优势步骤dm的FP / BP所花费的时间，加减其步骤s中FP / BP所花费的时间E）。</p>
+<p>而对于FP / BP所花费的时间E，论文设计一种创新的动态规划算法，从所有可能的配置中识别最佳的HPP架构，有效地减少HPP轮延迟。关键目标是在资源不同的设备之间对微批样品进行最佳分配。这种分配力求在每个设备的内存预算内最小化数据并行执行时间。（FP / BP所花费的时间E即为时延tf与tb各自的和。）</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+T(i\to j,\mathcal{G}_{s}) & =\min_{y_{d}\in\mathcal{Y}_{s}}\max_{d\in\mathcal{G}_{s}}\sum_{l=i}^{j}[t_{f}^{d,l}(y_{d})+t_{b}^{d,l}(y_{d})], \\
+ & s.t.\sum_{d\in\mathcal{G}_{s}}y_{d}=\mathrm{B},\quad\mathrm{Mem}_{s}(y_{d})\leq u_{d},
+\end{aligned}</script><p>论文通过算法1（微批样品的分配）解决上述约束优化问题。算法可分为两个不同的阶段：内存感知的工作负载均衡阶段和工作负载卸载阶段。在第一阶段，在设备之间递归地分配工作负载，以一种基于其计算能力平衡工作负载的方式，同时严格遵守内存预算。在第二阶段，迭代地将示例工作负载从掉队设备（最慢的设备）转移到具有足够内存的最快设备。当工作负载卸载导致较慢的散列器时，迭代终止。我们可以根据微批大小调整块大小，在规划开销和平衡之间进行权衡。</p>
+<p>论文通过算法2（动态规划HPP规划）搜索最优HPP配置以最小化HPP轮延迟。为了降低跨异构设备编排的搜索复杂性，我们按内存容量降序对设备进行排序，并相应地映射阶段。在算法2中，并发记录了𝑄（𝑙，𝑛，𝑝）的并行配置，包括模型分区点、设备分组策略和组内微批分配。该过程在完成后确定HPP的最佳并行配置。</p>
+<h4 id="容错管道重放"><a href="#容错管道重放" class="headerlink" title="容错管道重放"></a>容错管道重放</h4><p>由于边缘设备表现出强烈的动态性（可能随时离开训练、网络异常等等），重调度可能会在重新规划和模型传输中引起相当大的延迟。为了解决这些问题，Asteroid集成了一个动态容错管道重播轻量级重调度，具有三个有效响应资源波动的模块：</p>
+<p>1、心跳引导的故障检测。每个设备定期向中央协调器发出心跳信号，作为其活动的证明，确认其运行状态。</p>
+<p>2、拓扑驱动的模型复制。Asteroid采用拓扑驱动的模型复制，当设备发生故障时，可以从备份节点恢复模型权重。</p>
+<p>3、分层轻量级管道重新规划。为了加快管道的重新规划，我们采用分层轻量级方法代替重新运行整个规划算法。在设备发生故障的情况下，相关的工作负载将根据其计算能力在其余阶段之间重新分配，通过对当前规划配置的层分区点进行微小调整来实现。</p>
+<h3 id="实验与结果"><a href="#实验与结果" class="headerlink" title="实验与结果"></a>实验与结果</h3><p>作者在pytorch上进行实验，与DP、PP、EDDL、PipeDream、Dapple、HetPipe对比，证明了论文方法的有效性。并通过消融实验证明了HPP中优化的性能提升。在容错机制的实验验证中，作者的方法与繁重的重新调度方法进行了对比，比重调度恢复得快得多，并且可以在不同的场景中实现相当的系统吞吐量。除此之外，还具有一定的扩展性。</p>
+<h3 id="引用内容（自用）："><a href="#引用内容（自用）：" class="headerlink" title="引用内容（自用）："></a>引用内容（自用）：</h3><p>@article{Ye2024AsteroidRH,  title={Asteroid: Resource-Efficient Hybrid Pipeline Parallelism for Collaborative DNN Training on Heterogeneous Edge Devices},  author={Shengyuan Ye and Liekang Zeng and Xiaowen Chu and Guoliang Xing and Xu Chen},  journal={Proceedings of the 30th Annual International Conference on Mobile Computing and Networking},  year={2024},  url={<a target="_blank" rel="noopener" href="https://api.semanticscholar.org/CorpusID:270125485}">https://api.semanticscholar.org/CorpusID:270125485}</a> }</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">myc</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/12/02/Asteroid-Resource-Efficient-Hybrid-Pipeline-Parallelism-for-Collaborative-DNN-Training-on-Heterogeneous-Edge-Devices/">http://example.com/2024/12/02/Asteroid-Resource-Efficient-Hybrid-Pipeline-Parallelism-for-Collaborative-DNN-Training-on-Heterogeneous-Edge-Devices/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">太想进步了</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a></div><div class="post_share"><div class="social-share" data-image="/img/1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/10/27/%E5%85%83%E8%AE%A1%E7%AE%97/" title="元计算Meta Computing总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">元计算Meta Computing总结</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/10/14/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-A-Low-Complexity-Algorithm-with-OgenTRegretandO1Constraint-Violations-for-Online-Convex-Optimization-with-Long-Term-Constraints/" title="论文阅读-A_Low_Complexity_Algorithm_with_OgenTRegretandO1Constraint_Violations_for_Online_Convex_Optimization_with_Long_Term_Constraints"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-14</div><div class="title">论文阅读-A_Low_Complexity_Algorithm_with_OgenTRegretandO1Constraint_Violations_for_Online_Convex_Optimization_with_Long_Term_Constraints</div></div></a></div><div><a href="/2024/09/24/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Online-Distributed-Optimization-with-Efficient-Communication-via-Temporal-Similarity/" title="论文阅读_Online_Distributed_Optimization_with_Efficient_Communication_via_Temporal_Similarity"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-24</div><div class="title">论文阅读_Online_Distributed_Optimization_with_Efficient_Communication_via_Temporal_Similarity</div></div></a></div><div><a href="/2024/10/14/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E6%A8%A1%E6%9D%BF/" title="论文阅读模板"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-14</div><div class="title">论文阅读模板</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">myc</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">北京理工大学-计算机学院</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Asteroid-Resource-Efficient-Hybrid-Pipeline-Parallelism-for-Collaborative-DNN-Training-on-Heterogeneous-Edge-Devices"><span class="toc-number">1.</span> <span class="toc-text">Asteroid_Resource_Efficient_Hybrid_Pipeline_Parallelism_for_Collaborative DNN_Training_on_Heterogeneous_Edge_Devices</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%98%E8%A6%81%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">摘要：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">结论：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text"> </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF"><span class="toc-number">1.4.</span> <span class="toc-text">研究背景</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#DNN%E8%AE%AD%E7%BB%83%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">DNN训练有什么问题？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%A0%94%E7%A9%B6%E5%88%86%E5%B8%83%E5%BC%8F%E8%BE%B9%E7%BC%98%E7%8E%AF%E5%A2%83%EF%BC%9F"><span class="toc-number">1.4.0.2.</span> <span class="toc-text">为什么研究分布式边缘环境？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%AF%E4%BB%A5%E5%88%A9%E7%94%A8%E7%9A%84DNN%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.4.0.3.</span> <span class="toc-text">可以利用的DNN分布式训练方法有哪些？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E6%8C%91%E6%88%98"><span class="toc-number">1.4.0.4.</span> <span class="toc-text">研究挑战</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E7%9B%AE%E7%9A%84"><span class="toc-number">1.5.</span> <span class="toc-text">研究目的</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E8%B4%A1%E7%8C%AE"><span class="toc-number">1.5.1.</span> <span class="toc-text">论文贡献</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.6.</span> <span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BA%E6%96%87%E6%96%B9%E6%B3%95"><span class="toc-number">1.7.</span> <span class="toc-text">论文方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%B7%E5%90%88%E7%AE%A1%E9%81%93%E5%B9%B6%E8%A1%8C"><span class="toc-number">1.7.1.</span> <span class="toc-text">混合管道并行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E8%AE%A1%E5%88%92"><span class="toc-number">1.7.2.</span> <span class="toc-text">并行计划</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%B9%E9%94%99%E7%AE%A1%E9%81%93%E9%87%8D%E6%94%BE"><span class="toc-number">1.7.3.</span> <span class="toc-text">容错管道重放</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%8E%E7%BB%93%E6%9E%9C"><span class="toc-number">1.8.</span> <span class="toc-text">实验与结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E5%86%85%E5%AE%B9%EF%BC%88%E8%87%AA%E7%94%A8%EF%BC%89%EF%BC%9A"><span class="toc-number">1.9.</span> <span class="toc-text">引用内容（自用）：</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/02/Asteroid-Resource-Efficient-Hybrid-Pipeline-Parallelism-for-Collaborative-DNN-Training-on-Heterogeneous-Edge-Devices/" title="Asteroid_Resource_Efficient_Hybrid_Pipeline_Parallelism_for_Collaborative DNN_Training_on_Heterogeneous_Edge_Devices">Asteroid_Resource_Efficient_Hybrid_Pipeline_Parallelism_for_Collaborative DNN_Training_on_Heterogeneous_Edge_Devices</a><time datetime="2024-12-02T07:37:43.000Z" title="发表于 2024-12-02 15:37:43">2024-12-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/27/%E5%85%83%E8%AE%A1%E7%AE%97/" title="元计算Meta Computing总结">元计算Meta Computing总结</a><time datetime="2024-10-27T06:18:40.000Z" title="发表于 2024-10-27 14:18:40">2024-10-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/14/plato%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95/" title="plato运行测试">plato运行测试</a><time datetime="2024-10-14T15:32:54.000Z" title="发表于 2024-10-14 23:32:54">2024-10-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/14/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-A-Low-Complexity-Algorithm-with-OgenTRegretandO1Constraint-Violations-for-Online-Convex-Optimization-with-Long-Term-Constraints/" title="论文阅读-A_Low_Complexity_Algorithm_with_OgenTRegretandO1Constraint_Violations_for_Online_Convex_Optimization_with_Long_Term_Constraints">论文阅读-A_Low_Complexity_Algorithm_with_OgenTRegretandO1Constraint_Violations_for_Online_Convex_Optimization_with_Long_Term_Constraints</a><time datetime="2024-10-14T14:48:16.000Z" title="发表于 2024-10-14 22:48:16">2024-10-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/14/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E6%A8%A1%E6%9D%BF/" title="论文阅读模板">论文阅读模板</a><time datetime="2024-10-14T14:31:43.000Z" title="发表于 2024-10-14 22:31:43">2024-10-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By myc</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
